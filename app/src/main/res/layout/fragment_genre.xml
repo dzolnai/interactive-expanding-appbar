@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.egeniq.interactiveexpandingappbar.GenreViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:expandedTitleMarginStart="@dimen/genre_clickable_title_left_margin"
+                app:expandedTitleMarginBottom="@dimen/genre_clickable_title_bottom_margin"
+                app:expandedTitleMarginTop="0dp"
+                app:collapsedTitleGravity="center"
+                android:background="@color/background"
+                app:collapsedTitleTextAppearance="@style/AppTheme.CollapsingToolbarTitle.Collapsed"
+                app:expandedTitleGravity="left|bottom"
+                app:expandedTitleTextAppearance="@style/AppTheme.CollapsingToolbarTitle.Expanded"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <Space
+                    android:id="@+id/expanded_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp"/>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    app:titleMargin="0dp"
+                    app:titleMargins="0dp"
+                    app:contentInsetStart="?attr/actionBarSize"
+                    app:contentInsetLeft="?attr/actionBarSize"
+                    app:contentInsetRight="?attr/actionBarSize"
+                    app:contentInsetEnd="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:contentInsetStartWithNavigation="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"/>
+
+                <FrameLayout
+                    android:id="@+id/clickable_layout"
+                    android:layout_width="wrap_content"
+                    tools:layout_width="200dp"
+                    android:translationZ="10dp"
+                    android:layout_gravity="bottom"
+                    android:paddingBottom="@dimen/clickable_layout_bottom_padding_expanded"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <ImageView
+                        android:id="@+id/chevron"
+                        android:layout_width="wrap_content"
+                        app:srcCompat="@drawable/ic_expand"
+                        app:tint="@color/gray"
+                        android:layout_gravity="right|bottom"
+                        android:layout_height="wrap_content"/>
+
+                </FrameLayout>
+
+                <View
+                    android:id="@+id/back_button_touch_forwarder"
+                    app:layout_collapseMode="pin"
+                    android:translationZ="12dp"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"/>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="bottom"
+                android:background="@color/white_a15"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            tools:listitem="@layout/item_collection"
+            android:nestedScrollingEnabled="true"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="16dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <ProgressBar
+            android:id="@+id/loading_spinner"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:alpha="@{viewModel.isLoading ? 1f : 0f}"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

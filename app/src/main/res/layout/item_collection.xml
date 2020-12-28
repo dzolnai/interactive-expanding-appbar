@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/AppTheme.CollectionName"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:drawableRight="@drawable/ic_open_collection"
+            android:gravity="center_vertical"
+            android:drawablePadding="12dp"
+            android:paddingStart="@dimen/home_movies_left_margin"
+            tools:text="Actiefilms Vanaf 2,99" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/items"
+            android:nestedScrollingEnabled="false"
+            android:descendantFocusability="blocksDescendants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingLeft="@dimen/default_side_margin"
+            android:paddingBottom="@dimen/list_vertical_spacing"
+            android:clipToPadding="false"
+            android:scrollbars="none"
+            tools:itemCount="5"
+            tools:orientation="horizontal"
+            tools:listitem="@layout/item_movie" />
+
+    </LinearLayout>
+</layout>

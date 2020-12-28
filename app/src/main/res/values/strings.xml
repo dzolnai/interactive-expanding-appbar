@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Interactive Expanding Appbar</string>
+    <string name="genre_all_genres">All genres</string>
 </resources>

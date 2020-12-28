@@ -1,10 +1,27 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Interactiveexpandingappbar" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
-        <item name="colorAccent">@color/teal_200</item>
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#303030</item>
+        <item name="colorPrimaryDark">#101010</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlHighlight">#40FFFFFF</item>
+    </style>
+
+    <style name="AppTheme.CollapsingToolbarTitle.Expanded" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.CollapsingToolbarTitle.Collapsed" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.CollectionName" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 </resources>

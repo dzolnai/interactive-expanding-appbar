@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="movie_poster_corner_radius">8dp</dimen>
+    <dimen name="movie_poster_default_width">128dp</dimen>
+
+    <dimen name="movie_poster_small_width">100dp</dimen>
+    <dimen name="movie_poster_small_height">142dp</dimen>
+
+
+    <dimen name="clickable_layout_bottom_padding_expanded">19dp</dimen>
+    <dimen name="clickable_layout_bottom_padding_collapsed">14dp</dimen>
+    <dimen name="genre_clickable_layout_extra_width">28dp</dimen>
+    <dimen name="genre_clickable_title_left_margin">20dp</dimen>
+    <dimen name="genre_clickable_title_bottom_margin">24dp</dimen>
+    <dimen name="list_vertical_spacing">24dp</dimen>
+    <dimen name="home_movies_left_margin">20dp</dimen>
+    <dimen name="grid_spacing">8dp</dimen>
+    <dimen name="list_spacing">8dp</dimen>
+    <dimen name="grid_side_margin">16dp
+    </dimen><!-- Default side margin - grid spacing divided by 2 -->
+    <dimen name="default_side_margin">20dp</dimen>
+</resources>
