@@ -2,25 +2,23 @@ package com.egeniq.interactiveexpandingappbar
 
 import android.content.Context
 import android.util.Log
-import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.distinctUntilChanged
-import androidx.lifecycle.map
-import androidx.lifecycle.switchMap
+import androidx.lifecycle.*
 import com.egeniq.interactiveexpandingappbar.model.Collection
 import com.egeniq.interactiveexpandingappbar.model.Genre
 import com.egeniq.interactiveexpandingappbar.model.Movie
 import com.egeniq.interactiveexpandingappbar.repository.MovieDbRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.kotlin.plusAssign
 import io.reactivex.rxjava3.kotlin.subscribeBy
+import javax.inject.Inject
 
-class GenreViewModel @ViewModelInject constructor(
-        @ApplicationContext context: Context,
-        private val movieDbRepository: MovieDbRepository
+@HiltViewModel
+class GenreViewModel @Inject constructor(
+    @ApplicationContext context: Context,
+    private val movieDbRepository: MovieDbRepository
 ) : ViewModel() {
 
     companion object {
